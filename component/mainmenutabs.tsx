@@ -9,23 +9,24 @@ type Comp = {
     class_attr: string;
 }
 
-interface Props {
-    list: any;
-  }
+// interface Props {
+//     list: any;
+//   }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-    const res = await fetch('http://localhost:5000/fragments')
-    //const posts: Comp[] = await res.json()
-    console.log(res)
-    return {
-      props: {
-        list: res,
-      },
-    }
-  }
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+//     const res = await fetch('http://localhost:5000/fragments')
+//     //const posts: Comp[] = await res.json()
+//     console.log(res)
+//     return {
+//       props: {
+//         list: res,
+//       },
+//     }
+//   }
 
-export default function MainMenu ({list}: InferGetStaticPropsType<typeof getStaticProps>) {
-    console.log(list)
+//export default function MainMenu ({list}: InferGetStaticPropsType<typeof getStaticProps>) {
+  export default function MainMenu () {
+  
     return (
         <div style={{padding: "0.5rem"}}>
             <h1><FontAwesomeIcon icon={faArrowLeft} style={{width: "1rem", margin: "1rem"}}/>Project Name</h1>
